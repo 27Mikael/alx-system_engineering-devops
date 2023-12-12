@@ -1,1 +1,2 @@
-#!/bin/bash \nprintenvh
+#!/bin/bash 
+printenvh

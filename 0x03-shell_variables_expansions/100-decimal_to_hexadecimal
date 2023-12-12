@@ -1,1 +1,2 @@
-#!/bin/bash \nprintf %xn $DECIMAL
+#!/bin/bash 
+printf %xn $DECIMAL
