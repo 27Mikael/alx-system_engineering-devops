@@ -9,8 +9,8 @@ apt-get -y install
 HOST_NAME=$(hostname)
 HEADER="\\\n\tadd_header X-Served-By $HOST_NAME;\n"
 FIND=$(grep "X-Server-By" /etc/nginx/sites-available/default)
-if [[ -z $FIND]]; then
-    sed -i "231 $HEADER" /etc/nginx/sites-available/default
+if [[ -z $FIND ]]; then
+    sed -i "231i $HEADER" /etc/nginx/sites-available/default
 fi
 
 # Create an html page
