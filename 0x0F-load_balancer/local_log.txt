@@ -2,65 +2,14 @@ Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal InRelease
 Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates InRelease [128 kB]
 Hit:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-backports InRelease
 Hit:4 http://security.ubuntu.com/ubuntu focal-security InRelease
-Fetched 128 kB in 0s (343 kB/s)
+Fetched 128 kB in 1s (187 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 68 not upgraded.
-bash: line 12: syntax error in conditional expression: unexpected token `;'
-bash: line 12: syntax error near `;'
-bash: line 12: `if [[ -z $FIND]]; then'
-Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal InRelease
-Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates InRelease [128 kB]
-Hit:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-backports InRelease
-Hit:4 http://security.ubuntu.com/ubuntu focal-security InRelease
-Fetched 128 kB in 1s (210 kB/s)
-Reading package lists...
-Reading package lists...
-Building dependency tree...
-Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 68 not upgraded.
-sed: -e expression #1, char 5: unknown command: `\'
-Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal InRelease
-Hit:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates InRelease
-Hit:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-backports InRelease
-Hit:4 http://security.ubuntu.com/ubuntu focal-security InRelease
-Reading package lists...
-Reading package lists...
-Building dependency tree...
-Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 68 not upgraded.
-Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal InRelease
-Hit:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates InRelease
-Hit:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-backports InRelease
-Hit:4 http://security.ubuntu.com/ubuntu focal-security InRelease
-Reading package lists...
-Reading package lists...
-Building dependency tree...
-Reading state information...
-E: Version '1.6.*' for 'haproxy' was not found
-bash: line 19: /etc/haproxy/haproxy.cfg: No such file or directory
-Failed to restart haproxy.service: Unit haproxy.service not found.
-Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal InRelease
-Hit:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates InRelease
-Hit:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-backports InRelease
-Hit:4 http://security.ubuntu.com/ubuntu focal-security InRelease
-Reading package lists...
-Reading package lists...
-Building dependency tree...
-Reading state information...
-The following additional packages will be installed:
-  liblua5.3-0
-Suggested packages:
-  vim-haproxy haproxy-doc
 The following NEW packages will be installed:
-  haproxy liblua5.3-0
-0 upgraded, 2 newly installed, 0 to remove and 68 not upgraded.
-Need to get 1658 kB of archives.
-After this operation, 3811 kB of additional disk space will be used.
-Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/main amd64 liblua5.3-0 amd64 5.3.3-1.1ubuntu2 [116 kB]
-Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/main amd64 haproxy amd64 2.0.33-0ubuntu0.1 [1542 kB]
+  nginx
+0 upgraded, 1 newly installed, 0 to remove and 198 not upgraded.
 debconf: unable to initialize frontend: Dialog
 debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
 debconf: falling back to frontend: Readline
@@ -68,32 +17,23 @@ debconf: unable to initialize frontend: Readline
 debconf: (This frontend requires a controlling tty.)
 debconf: falling back to frontend: Teletype
 dpkg-preconfigure: unable to re-open stdin: 
-Fetched 1658 kB in 0s (39.7 MB/s)
-Selecting previously unselected package liblua5.3-0:amd64.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 90812 files and directories currently installed.)
-Preparing to unpack .../liblua5.3-0_5.3.3-1.1ubuntu2_amd64.deb ...
-Unpacking liblua5.3-0:amd64 (5.3.3-1.1ubuntu2) ...
-Selecting previously unselected package haproxy.
-Preparing to unpack .../haproxy_2.0.33-0ubuntu0.1_amd64.deb ...
-Unpacking haproxy (2.0.33-0ubuntu0.1) ...
-Setting up liblua5.3-0:amd64 (5.3.3-1.1ubuntu2) ...
-Setting up haproxy (2.0.33-0ubuntu0.1) ...
-Created symlink /etc/systemd/system/multi-user.target.wants/haproxy.service → /lib/systemd/system/haproxy.service.
-Processing triggers for man-db (2.9.1-1) ...
-Processing triggers for libc-bin (2.31-0ubuntu9.16) ...
-Processing triggers for rsyslog (8.2001.0-1ubuntu1.3) ...
-Processing triggers for systemd (245.4-4ubuntu3.20) ...
-Job for haproxy.service failed because the control process exited with error code.
-See "systemctl status haproxy.service" and "journalctl -xe" for details.
+Need to get 0 B/3620 B of archives.
+After this operation, 46.1 kB of additional disk space will be used.
+Selecting previously unselected package nginx.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 61996 files and directories currently installed.)
+Preparing to unpack .../nginx_1.18.0-0ubuntu1.4_all.deb ...
+Unpacking nginx (1.18.0-0ubuntu1.4) ...
+Setting up nginx (1.18.0-0ubuntu1.4) ...
+Job for nginx.service failed because the control process exited with error code.
+See "systemctl status nginx.service" and "journalctl -xe" for details.
 Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal InRelease
-Hit:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates InRelease
+Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates InRelease [128 kB]
 Hit:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-backports InRelease
 Hit:4 http://security.ubuntu.com/ubuntu focal-security InRelease
+Fetched 128 kB in 1s (169 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
-haproxy is already the newest version (2.0.33-0ubuntu0.1).
-0 upgraded, 0 newly installed, 0 to remove and 68 not upgraded.
-Job for haproxy.service failed because the control process exited with error code.
-See "systemctl status haproxy.service" and "journalctl -xe" for details.
+nginx is already the newest version (1.18.0-0ubuntu1.4).
+0 upgraded, 0 newly installed, 0 to remove and 198 not upgraded.
