@@ -14,7 +14,7 @@ frontend 27Mikael.tech
 
 backend web_servers
         balance roundrobin
-        server 497074-web-01 100.24.242.201:80
+        server 497074-web-01 54.237.64.95:80
         server 497074-web-02 34.207.64.75:80
 ' >> /etc/haproxy/haproxy.cfg
 
