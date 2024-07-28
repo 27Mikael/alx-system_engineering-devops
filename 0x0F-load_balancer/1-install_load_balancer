@@ -1,47 +1,24 @@
 #!/usr/bin/env bash
-# This script installs and configures HAProxy on an Ubuntu machine to balance traffic between web-01 and web-02 using a round-robin algorithm.
+#Configure new HA proxy as a load balancer
 
-# Update package list and install HAProxy
-sudo apt-get update
-sudo apt-get install -y haproxy
 
-# Define HAProxy configuration
-cat <<EOF | sudo tee /etc/haproxy/haproxy.cfg
-# Global settings
-global
-    log /dev/log local0
-    log /dev/log local1 notice
-    chroot /var/lib/haproxy
-    stats socket /run/haproxy/admin.sock mode 660
-    stats timeout 30s
-    user haproxy
-    group haproxy
-    daemon
+# Install HAproxy on a server
+apt-get -y update
+apt-get -y install haproxy
 
-# Default settings
-defaults
-    log     global
-    option  httplog
-    option  dontlognull
-    timeout connect 5000ms
-    timeout client  50000ms
-    timeout server  50000ms
+# Configure haproxy configuration file to distribute requests using a roundrobin algorithm
+echo '
+frontend 27Mikael.tech
+        bind 0:80
+        default_backend web_servers
 
-# Frontend configuration
-frontend 27mikael-frontend
-    bind *:80
-    mode http
-    default_backend 27mikael-backend
+backend web_servers
+        balance roundrobin
+        server 497074-web-01 54.237.64.95:80
+        server 497074-web-02 34.207.64.75:80
+' >> /etc/haproxy/haproxy.cfg
 
-# Backend configuration
-backend 27mikael-backend
-    balance roundrobin
-    server 497074-web-01 54.237.64.95:80 check
-    server 497074-web-02 34.207.64.75:80 check
-EOF
+# Restart HAproxy service
+service haproxy restart
 
-# Enable HAProxy to start on boot
-sudo sed -i 's/ENABLED=0/ENABLED=1/' /etc/default/haproxy
 
-# Restart HAProxy service
-sudo service haproxy restart
