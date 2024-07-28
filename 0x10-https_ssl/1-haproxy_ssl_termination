@@ -33,8 +33,14 @@ defaults
         errorfile 503 /etc/haproxy/errors/503.http
         errorfile 504 /etc/haproxy/errors/504.http
 
-frontend 27Mikael.tech
-        bind 0:80
+frontend 27Mikael.tech_http
+        bind *:80
+        redirect scheme https code 301 if !{ ssl_fc }
+
+frontend 27Mikael.tech_https
+        bind *:443 ssl crt /etc/letsencrypt/live/www.27mikael.tech/fullchain.pem crt /etc/letsencrypt/live/www.27mikael.tech/privkey.pem
+        mode http
+        option forwardfor
         default_backend web_servers
 
 backend web_servers
