@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# This script installs and configures HAProxy on an Ubuntu machine to balance traffic between web-01 and web-02 using a round-robin algorithm.
 
 # Update package list and install HAProxy
 sudo apt-get update
