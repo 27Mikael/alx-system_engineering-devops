@@ -17,12 +17,13 @@
 #
 server-id       = 1
 log_bin         = /var/log/mysql/mysql-bin.log
+binlog_format 	= row
 binlog_do_db    = tyrell_corp
 user            = mysql
-# pid-file      = /var/run/mysqld/mysqld.pid
-# socket        = /var/run/mysqld/mysqld.sock
+pid-file     	= /var/run/mysqld/mysqld.pid
+socket          = /var/run/mysqld/mysqld.sock
 port            = 3306
-# datadir       = /var/lib/mysql
+datadir		    = /var/lib/mysql
 
 
 # If MySQL is running as a replication slave, this should be

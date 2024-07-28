@@ -16,12 +16,14 @@
 # * Basic Settings
 #
 server-id       = 2
-relay-log       = /var/log/mysql/mysql-relay-bin.log
+relay-log       = relay-log
 user            = mysql
-# pid-file      = /var/run/mysqld/mysqld.pid
-# socket        = /var/run/mysqld/mysqld.sock
-# port          = 3306
-# datadir       = /var/lib/mysql
+log_bin	    	= /var/log/mysql/mysql-bin.log
+replicate-do-db	= tyrell_corp
+pid-file    	= /var/run/mysqld/mysqld.pid
+socket	    	= /var/run/mysqld/mysqld.sock
+port	    	= 3306
+datadir	    	= /var/lib/mysql
 
 
 # If MySQL is running as a replication slave, this should be
