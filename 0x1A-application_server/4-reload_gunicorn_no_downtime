@@ -1,5 +1,31 @@
-#!/usr/bin/env bash
-# Script to reload Gunicorn configurations and restart workers
-# without killing master processes
+#!/bin/bash
 
-pkill -HUP -f 'gunicorn'
+# Define the Gunicorn PID file location
+PID_FILE="/run/gunicorn/gunicorn.pid"
+
+# Check if the PID file exists
+if [ ! -f "$PID_FILE" ]; then
+  echo "Gunicorn PID file not found. Are you sure Gunicorn is running?"
+  exit 1
+fi
+
+# Read the PID from the PID file
+PID=$(cat "$PID_FILE")
+
+# Check if the PID file is readable
+if [ -z "$PID" ]; then
+  echo "PID file is empty. Cannot reload Gunicorn."
+  exit 1
+fi
+
+# Send HUP signal to the master process to gracefully reload
+echo "Reloading Gunicorn with PID $PID..."
+kill -HUP "$PID"
+
+# Check if the reload was successful
+if [ $? -eq 0 ]; then
+  echo "Gunicorn successfully reloaded."
+else
+  echo "Failed to reload Gunicorn."
+  exit 1
+fi
