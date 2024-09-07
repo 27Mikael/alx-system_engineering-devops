@@ -1,0 +1,12 @@
+[Unit]
+Description=Gunicorn instance to serve AirBnB clone - Web dynamic
+After=network.target
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=/path/to/AirBnB_clone_v2
+ExecStart=/usr/local/bin/gunicorn --workers 3 --bind 0.0.0.0:5003 --access-logfile /tmp/airbnb-access.log --error-logfile /tmp/airbnb-error.log web_dynamic.2-hbnb:app
+
+[Install]
+WantedBy=multi-user.target
