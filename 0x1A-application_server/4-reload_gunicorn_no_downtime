@@ -2,4 +2,4 @@
 # Script to reload Gunicorn configurations and restart workers
 # without killing master processes
 
-pkill -HUP -f 'gunicorn: master'
+pkill -HUP -f 'gunicorn'
